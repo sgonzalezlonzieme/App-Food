@@ -5,15 +5,15 @@ const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define('typeOfDiet', {
+  sequelize.define('Type_of_diet', {
     id: {
-       type: DataTypes.UUID,
+       type: DataTypes.INTEGER,
        primaryKey: true,
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-
+    
   });
 };
