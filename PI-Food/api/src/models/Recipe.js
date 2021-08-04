@@ -26,8 +26,8 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-     originalString: {
-       type: DataTypes.STRING,
+    analyzedInstructions: {
+       type: DataTypes.ARRAY(DataTypes.JSON),
       allowNull: false,
      }
   });

@@ -1,12 +1,12 @@
 const {Router} = require('express');
-const axios = require('axios').default;
+const axios = require('axios');
 
 const router = Router()
 
 router.post('/', async (req, res)=>{
-   
+     const {name} = req.query;
 
-  res.json('Mensaje de prueba de recipe')
+     
 
      
 })
