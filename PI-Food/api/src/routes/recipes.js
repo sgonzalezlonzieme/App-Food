@@ -1,5 +1,6 @@
 const {Router} = require('express');
 const axios = require('axios').default;
+const {Recipe, Diet} = require('../db.js')
 
 
 const router = Router()
@@ -20,15 +21,24 @@ router.get('/', async (req, res) => {
 })
 
    router.get('/:id', async (req, res)=>{
-    const idReceta = req.params.id;
+    const idReceta = req.params.id.toString();
+    
+    if(idReceta.length > 15){
 
-    let recipes = await axios.get(`https://api.spoonacular.com/recipes/${idReceta}/information?apiKey=bc992422a742427e84181e1ef7f78961`)
+        const findDatabase = await Recipe.findAll({include: Diet})
+        
+        const filtrado = findDatabase.find(p => p.id == idReceta)
+        console.log(filtrado)
+        return filtrado ? res.send(filtrado) : res.send('No recipes found1')
+        
+    }else if(idReceta.length < 5){
+        let recipes = await axios.get(`https://api.spoonacular.com/recipes/${idReceta}/information?apiKey=bc992422a742427e84181e1ef7f78961`)
+ 
+        let recipesAll = recipes.data
 
-    let recipesAll = recipes.data
-
-    if(idReceta){
         let {image, title,
             dishTypes, diets, summary, spoonacularScore, healthScore, analyzedInstructions} = recipesAll
+        
         let obj = {
             image: image,
             title: title,
@@ -39,8 +49,10 @@ router.get('/', async (req, res) => {
             healthScore: healthScore,
             analyzedInstructions: analyzedInstructions,
         }
-        res.json(obj)
-   }})
+        return res.json(obj)
+    }else{
+        res.json('No recipes found')
+    }})
 
 
 

@@ -1,6 +1,7 @@
 const { DataTypes } = require('sequelize');
 // Exportamos una funcion que define el modelo
-// Luego le injectamos la conexion a sequelize.
+// Luego le injectamos la conexion a sequelize.4
+
 
 
 module.exports = (sequelize) => {
@@ -9,6 +10,7 @@ module.exports = (sequelize) => {
     id: {
        type: DataTypes.UUID,
        primaryKey: true,
+       allowNull: false,
     },
     title: {
       type: DataTypes.STRING,
@@ -27,7 +29,7 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     analyzedInstructions: {
-       type: DataTypes.ARRAY(DataTypes.JSON),
+      type: DataTypes.ARRAY(DataTypes.TEXT),
       allowNull: false,
      }
   });
