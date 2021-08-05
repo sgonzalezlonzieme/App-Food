@@ -18,7 +18,7 @@ router.post('/', async (req, res)=>{
         healthScore: healthScore,
         analyzedInstructions: analyzedInstructions,
      })
-     
+          
      await newRecipe.addDiets(types);
      
      res.json(newRecipe)
