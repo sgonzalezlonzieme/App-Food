@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 
     const responder = filtrado.map(p => p.title)
     
-    if(filtrado){
+    if(filtrado.length > 0){
         res.send(responder)
     }
 
@@ -42,6 +42,7 @@ router.get('/', async (req, res) => {
         return filtrado ? res.send(filtrado) : res.send('No recipes found1')
         
     }else if(idReceta.length < 5){
+
         let recipes = await axios.get(`https://api.spoonacular.com/recipes/${idReceta}/information?apiKey=bc992422a742427e84181e1ef7f78961`)
  
         let recipesAll = recipes.data

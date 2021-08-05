@@ -12,9 +12,9 @@ router.get('/', async (req, res) => {
       // const diets = [{id, name:'Gluten Free'}, {id, name:'Ketogenic'}]
       let recipes = await axios.get('https://api.spoonacular.com/recipes/complexSearch?apiKey=bc992422a742427e84181e1ef7f78961&addRecipeInformation=true&number=50')
       let recipesAll = recipes.data.results
-      let recipesArray = [];
       let result = recipesAll.map(p => p.diets)
       let result2 = result.flat()
+      let recipesArray = [];
       result2.forEach(elem => {
           if(!recipesArray.includes(elem)){
               recipesArray.push(elem)
@@ -30,9 +30,8 @@ router.get('/', async (req, res) => {
     }catch(error){
         res.send(error)
     }
-  }else{  
-    const bulk = await Diet.findAll()
-    let names = bulk.map(p => p.name)
+  }else{    
+    let names = allDiets.map(p => p.name)
     res.json(names);
 
   }

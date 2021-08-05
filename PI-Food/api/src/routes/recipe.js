@@ -10,7 +10,7 @@ router.post('/', async (req, res)=>{
      const {title, summary, spoonacularScore,  healthScore,  analyzedInstructions, types} = req.body;
 
      try{
-     const New = await Recipe.create({
+     const newRecipe = await Recipe.create({
         id,
         title: title,
         summary: summary,
@@ -19,9 +19,9 @@ router.post('/', async (req, res)=>{
         analyzedInstructions: analyzedInstructions,
      })
      
-     await New.addDiets(types);
-
-     res.json(New)
+     await newRecipe.addDiets(types);
+     
+     res.json(newRecipe)
 
      }catch(error){
           res.send(error)
