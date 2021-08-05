@@ -7,7 +7,17 @@ const router = Router()
 
 router.get('/', async (req, res) => {
     const {name} = req.query;
+
+    const findDatabase = await Recipe.findAll()
     
+    const filtrado = findDatabase.filter(p => p.title == name)
+
+    const responder = filtrado.map(p => p.title)
+    
+    if(filtrado){
+        res.send(responder)
+    }
+
     let recipes = await axios.get('https://api.spoonacular.com/recipes/complexSearch?apiKey=bc992422a742427e84181e1ef7f78961&addRecipeInformation=true&number=50')
     let recipesAll = recipes.data.results
     let result = recipesAll.map(obj => obj.title)
