@@ -22,15 +22,12 @@ module.exports = (sequelize) => {
     },
     spoonacularScore: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
     healthScore: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
     analyzedInstructions: {
       type: DataTypes.ARRAY(DataTypes.TEXT),
-      allowNull: false,
      }
   });
 };
