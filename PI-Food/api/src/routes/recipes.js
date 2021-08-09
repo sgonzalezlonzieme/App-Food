@@ -8,8 +8,35 @@ const {Op}  = require('sequelize')
 const router = Router()
 
 router.get('/', async (req, res, next) => { 
+    const {name} = req.query;
+
+    if(!name){
+        let recipes = await axios.get('https://api.spoonacular.com/recipes/complexSearch?apiKey=cfe63d3aea03481db67fdb27f394dcd6&addRecipeInformation=true&number=100')
+       
+        let recipesAll = recipes.data.results
+        
+                let recipesAll1 = recipesAll.map(p => {return {  
+                    title: p.title,
+                    image: p.image,
+                    diets: p.diets,
+                }})
+
+        const database = await Recipe.findAll()
+
+        //let result3 = recipesAll.concat(database)
+
+        let databaseResult = database.map(p => {return {  
+            title: p.title,
+            image: p.image,
+            diets: p.diets,
+        }})
+         
+        let render = recipesAll1.concat(databaseResult)
+         
+        res.send(render)
+    } 
     try{
-        const {name} = req.query;
+        
     
         const findDatabase = await Recipe.findAll({
             where: {
@@ -20,12 +47,22 @@ router.get('/', async (req, res, next) => {
             include: Diet      
         });
            
-          
-        let recipes = await axios.get('https://api.spoonacular.com/recipes/complexSearch?apiKey=bc992422a742427e84181e1ef7f78961&addRecipeInformation=true&number=100')
-
+        //Mejorar el código, demasiados pasos. Ver como evitar data. 
+        let recipes = await axios.get('https://api.spoonacular.com/recipes/complexSearch?apiKey=cfe63d3aea03481db67fdb27f394dcd6&addRecipeInformation=true&number=100')
+        
         let recipesAll = recipes.data.results
 
         let result2 = recipesAll.filter(obj => obj.title.includes(name))
+        
+        let analyzedResult1 = result2.map(p => p.analyzedInstructions )
+        
+        let analyzedResult2 = analyzedResult1[1]
+        
+        let analyzedResult3 = analyzedResult2[0].steps.map(obj => 
+            obj.step)
+            //res.send(analyzedResult3)
+        
+        
 
         let mapResult = result2.map(p => {return {
             vegetarian: p.vegetarian,
@@ -38,7 +75,7 @@ router.get('/', async (req, res, next) => {
             image: p.image,
             summary: p.summary,
             diets: p.diets,
-            analyzedInstructions: p.analyzedInstructions,
+            analyzedInstructions: analyzedResult3,
         }})
 
         let result3 = findDatabase.concat(mapResult)
@@ -71,13 +108,16 @@ router.get('/', async (req, res, next) => {
          
      }else if(!validate(idReceta)){
    
-            let recipes = await axios.get(`https://api.spoonacular.com/recipes/${idReceta}/information?apiKey=bc992422a742427e84181e1ef7f78961`)
+            let recipes = await axios.get(`https://api.spoonacular.com/recipes/${idReceta}/information?apiKey=cfe63d3aea03481db67fdb27f394dcd6`)
      
             let recipesAll = recipes.data
     
             let {image, title,
                 dishTypes, diets, summary, spoonacularScore, healthScore, analyzedInstructions} = recipesAll
-            
+                
+            let analyzedResult1 = analyzedInstructions[0]?.steps.map(p => p.step)
+        
+
             let obj = {
                 image: image,
                 title: title,
@@ -86,7 +126,7 @@ router.get('/', async (req, res, next) => {
                 summary: summary,
                 spoonacularScore: spoonacularScore,
                 healthScore: healthScore,
-                analyzedInstructions: analyzedInstructions,
+                analyzedInstructions: analyzedResult1,
         }
            return res.json(obj)
 

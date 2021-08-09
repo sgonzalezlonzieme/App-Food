@@ -28,6 +28,10 @@ module.exports = (sequelize) => {
     },
     analyzedInstructions: {
       type: DataTypes.ARRAY(DataTypes.TEXT),
-     }
+     },
+    image: {
+      type: DataTypes.STRING,
+    }
+
   });
 };

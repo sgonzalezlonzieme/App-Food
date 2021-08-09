@@ -12,7 +12,7 @@ router.get('/', async (req, res, next) => {
   
      if(!allDiets.length){
     
-       let recipes = await axios.get('https://api.spoonacular.com/recipes/complexSearch?apiKey=bc992422a742427e84181e1ef7f78961&addRecipeInformation=true&number=50')
+       let recipes = await axios.get('https://api.spoonacular.com/recipes/complexSearch?apiKey=cfe63d3aea03481db67fdb27f394dcd6&addRecipeInformation=true&number=50')
        let recipesAll = recipes.data.results
        let result = recipesAll.map(p => p.diets)
        let result2 = result.flat()
