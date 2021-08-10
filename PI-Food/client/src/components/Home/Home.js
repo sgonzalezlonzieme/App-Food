@@ -1,24 +1,28 @@
 // import styles from './Main.css';
 import {useDispatch, useSelector} from 'react-redux'
-import { getRecipes, getRecipesByName } from '../../actions'
+import { getRecipes} from '../../actions'
 import RecipesCards from '../RecipesCards/RecipesCards.js'
+import './Home.css';
+import { Link } from 'react-router-dom';
 
 export function Home(){
    const dispatch = useDispatch()
-   const recipe = useSelector(store => store.recipes)
+   const recipes = useSelector(store => store.recipes)
    
 
    return ( 
-       <div className="App">
+       <div className="app">
            <label>Recipe name </label>
-           <div>
+           <div className="container">
                <button onClick={() => dispatch(getRecipes())} >Get recipes</button>
-               <div>
+               <div className="RecipesHome">
                    {
-                       recipe.map(rec => (
+                       recipes.map(rec => (
+                            <Link to={`/recipe/details/${rec.id}`}>
                            <div>
                             <RecipesCards title={rec.title} diets={rec.diets} image={rec.image} />
                            </div>
+                           </Link>
                        ))
                    }
                </div>

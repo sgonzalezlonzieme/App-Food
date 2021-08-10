@@ -3,6 +3,7 @@ const axios = require('axios').default;
 const {Recipe, Diet} = require('../db.js')
 const validate = require('uuid-validate');
 const {Op}  = require('sequelize')
+const {API_KEY} = process.env;
 
 
 const router = Router()
@@ -11,7 +12,7 @@ router.get('/', async (req, res, next) => {
     const {name} = req.query;
 
     if(!name){
-        let recipes = await axios.get('https://api.spoonacular.com/recipes/complexSearch?apiKey=cfe63d3aea03481db67fdb27f394dcd6&addRecipeInformation=true&number=100')
+        let recipes = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`)
        
         let recipesAll = recipes.data.results
         
@@ -19,6 +20,7 @@ router.get('/', async (req, res, next) => {
                     title: p.title,
                     image: p.image,
                     diets: p.diets,
+                    id: p.id,
                 }})
 
         const database = await Recipe.findAll()
@@ -29,15 +31,14 @@ router.get('/', async (req, res, next) => {
             title: p.title,
             image: p.image,
             diets: p.diets,
+            id: p.id,
         }})
          
         let render = recipesAll1.concat(databaseResult)
-         
-        res.send(render)
+
+        return res.send(render)
     } 
     try{
-        
-    
         const findDatabase = await Recipe.findAll({
             where: {
                title: {
@@ -48,39 +49,24 @@ router.get('/', async (req, res, next) => {
         });
            
         //Mejorar el código, demasiados pasos. Ver como evitar data. 
-        let recipes = await axios.get('https://api.spoonacular.com/recipes/complexSearch?apiKey=cfe63d3aea03481db67fdb27f394dcd6&addRecipeInformation=true&number=100')
+        let recipes = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`)
+
+        //https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&query=${title}
         
         let recipesAll = recipes.data.results
 
         let result2 = recipesAll.filter(obj => obj.title.includes(name))
-        
-        let analyzedResult1 = result2.map(p => p.analyzedInstructions )
-        
-        let analyzedResult2 = analyzedResult1[1]
-        
-        let analyzedResult3 = analyzedResult2[0].steps.map(obj => 
-            obj.step)
-            //res.send(analyzedResult3)
-        
-        
-
+         
         let mapResult = result2.map(p => {return {
-            vegetarian: p.vegetarian,
-            vegan: p.vegan,
-            glutenFree: p.glutenFree,
-            dairyFree: p.dairyFree,
-            healthScore: p.healthScore,
-            spoonacularScore: p.spoonacularScore,
             title: p.title,
             image: p.image,
-            summary: p.summary,
             diets: p.diets,
-            analyzedInstructions: analyzedResult3,
+            id: p.id,
         }})
 
         let result3 = findDatabase.concat(mapResult)
     
-        res.send(result3)
+        return res.send(result3)
 
     }catch(error){
 
@@ -113,12 +99,13 @@ router.get('/', async (req, res, next) => {
             let recipesAll = recipes.data
     
             let {image, title,
-                dishTypes, diets, summary, spoonacularScore, healthScore, analyzedInstructions} = recipesAll
+                dishTypes, diets, summary, spoonacularScore, healthScore, analyzedInstructions, id} = recipesAll
                 
             let analyzedResult1 = analyzedInstructions[0]?.steps.map(p => p.step)
         
 
             let obj = {
+                id: id,
                 image: image,
                 title: title,
                 dishTypes: dishTypes,

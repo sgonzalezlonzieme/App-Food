@@ -4,7 +4,9 @@ import {GET_RECIPES_QUERY, GET_DIETS, GET_RECIPES_ID, GET_NEW_RECIPE, GET_RECIPE
 const initialState = {
     recipes: [],
     diets: [],
-    recipe: [],
+    recipe: {},
+    searchResults: [],
+    cardDetails: {},
   }; 
 
 
@@ -12,12 +14,10 @@ const initialState = {
       switch(action.type){
         case GET_RECIPES:
            return {...state, recipes: action.payload}
-        case GET_NEW_RECIPE:
-           return {}
-        case GET_RECIPES_ID:
-            return {}
         case GET_RECIPES_QUERY:
-             return {}
+            return {...state, recipes: action.payload}
+        case GET_RECIPES_ID:
+            return {...state, recipe: action.payload}
         default:
              return state
       }

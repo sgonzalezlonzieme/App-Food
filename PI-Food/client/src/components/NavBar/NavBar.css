@@ -1,0 +1,31 @@
+.NavBar {
+ background-color: seagreen;
+ display: flex;
+ justify-content: center;
+}
+
+.LabelNav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-bottom: 8px;
+    color: white;
+    font-size: 28px;
+}
+
+.SubmitType {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-bottom: 8px;
+}
+
+.ButtonNav {
+    display: inline-block;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+

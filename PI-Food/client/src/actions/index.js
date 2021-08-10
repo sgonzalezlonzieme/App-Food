@@ -24,7 +24,7 @@ export const getRecipe = () => {
 }
 
 
-export const getRecipesByName = (title) => {
+export const getRecipesByQuery = (title) => {
     return async (dispatch) => {
       let result = await axios.get(`http://localhost:3001/recipes?name=${title}`)
       let results = result.data
@@ -34,7 +34,7 @@ export const getRecipesByName = (title) => {
 
 export const getRecipeById = (id) => {
     return async (dispatch) => {
-      let result = await axios.get(`http://localhost:3001/recipes?name=${id}`)
+      let result = await axios.get(`http://localhost:3001/recipes/${id}`)
       let results = result.data
       return dispatch({ type: GET_RECIPES_ID, payload: results });
         }
