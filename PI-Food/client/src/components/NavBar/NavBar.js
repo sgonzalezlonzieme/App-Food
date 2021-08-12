@@ -1,11 +1,13 @@
 import {useDispatch} from "react-redux"
 import { getRecipesByQuery } from "../../actions"
-import { useState } from "react";
+import { useState} from "react";
+import { useHistory } from "react-router";
 import './NavBar.css'
 
 export function NavBar(){
      const [recipe, setRecipe] = useState("")
      const dispatch = useDispatch();
+     const history = useHistory()
      
     const HandleChange = (event) => {
         setRecipe(event.target.value)
@@ -13,8 +15,12 @@ export function NavBar(){
 
     const HandleSubmit = (event) => {
         event.preventDefault();
+        if(recipe){
+          history.push({pathname: `/home`})
+        }
         dispatch(getRecipesByQuery(recipe))
     }
+
 
     return(
         <div className='NavBar'>

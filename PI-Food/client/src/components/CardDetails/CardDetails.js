@@ -1,7 +1,9 @@
 import "./CardDetails.css"
 
 export default function CardDetails(props){
-             console.log(props)
+        
+
+
  return   (
              <div className='cardDivDetails'>
          

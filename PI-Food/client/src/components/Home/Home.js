@@ -1,20 +1,27 @@
 // import styles from './Main.css';
 import {useDispatch, useSelector} from 'react-redux'
-import { getRecipes} from '../../actions'
+import { useEffect } from 'react';
 import RecipesCards from '../RecipesCards/RecipesCards.js'
 import './Home.css';
 import { Link } from 'react-router-dom';
+import { getRecipes } from '../../actions';
 
 export function Home(){
    const dispatch = useDispatch()
    const recipes = useSelector(store => store.recipes)
    
+//    const [posts, setPosts]= useState();
+//    const [currentPage, setCurrentPage]= useState();
+//    const [postsPerPage, setPostsPerPage]= useState();
+
+
 
    return ( 
        <div className="app">
-           <label>Recipe name </label>
            <div className="container">
-               <button onClick={() => dispatch(getRecipes())} >Get recipes</button>
+            
+                   {/* <button>Boton no creado</button> */}
+        
                <div className="RecipesHome">
                    {
                        recipes.map(rec => (
@@ -26,10 +33,7 @@ export function Home(){
                        ))
                    }
                </div>
-           </div>
-           <button>Boton no creado</button>
-           <div>
-               map de la cosas traídas del back
+           
            </div>
         
        </div>

@@ -27,10 +27,11 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
     },
     analyzedInstructions: {
-      type: DataTypes.ARRAY(DataTypes.TEXT),
+      type: DataTypes.STRING,
      },
     image: {
       type: DataTypes.STRING,
+      allowNull: false,
     }
 
   });

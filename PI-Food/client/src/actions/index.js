@@ -2,8 +2,9 @@ import axios from 'axios';
 export const GET_DIETS = 'GET_DIETS';
 export const GET_RECIPES_QUERY = 'GET_RECIPES_QUERY';
 export const GET_RECIPES_ID = 'GET_RECIPES_ID';
-export const GET_NEW_RECIPE = 'GET_NEW_RECIPE';
-export const GET_RECIPES = 'GET_RECIPES'
+export const POST_NEW_RECIPE = 'POST_NEW_RECIPE';
+export const GET_RECIPES = 'GET_RECIPES';
+export const GET_RECIPE = 'GET_RECIPE'
 
 //Pasar a arrow fuction
 export const getDiets = () => {
@@ -15,12 +16,12 @@ export const getDiets = () => {
 }
 
 
-export const getRecipe = () => {
+export const getNewRecipe = (info) => {
     return async function(dispatch) {
-      let result = await axios.post(`http://localhost:3001/recipe`)
+      let result = await axios.post(`http://localhost:3001/recipe/create`, info)
       let results = result.data
-      return dispatch({ type: GET_NEW_RECIPE, payload: results });
-        }
+      return dispatch({ type: POST_NEW_RECIPE, payload: results });
+      }
 }
 
 

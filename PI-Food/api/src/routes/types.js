@@ -22,16 +22,17 @@ router.get('/', async (req, res, next) => {
            if(!recipesArray.includes(elem)){
                recipesArray.push(elem)
            }
+           
        })
-       console.log(recipesArray)
+     
        let arreglo2 = []
        recipesArray.map(p => arreglo2.push({name:p}))
        const bulk = await Diet.bulkCreate(arreglo2)
-       let names = bulk.map(p => p.name)
+       let names = bulk.map(p => {return {name: p.name, id: p.id}})
        res.json(names);
        //adentro de recipesArray están todas las dietas menos vegetarian
      }else{    
-       let names = allDiets.map(p => p.name)
+       let names = allDiets.map(p => {return {name: p.name, id: p.id}})
        res.json(names);  
    }
    }catch(error){

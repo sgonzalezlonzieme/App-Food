@@ -1,10 +1,8 @@
 // import styles from './Details.css';
-import { getRecipeById } from "../../actions"
-import {useDispatch, useSelector} from 'react-redux'
-import CardDetails from "../CardDetails/CardDetails"
-import { useEffect } from "react"
-
-
+import { getRecipeById } from "../../actions";
+import {useDispatch, useSelector} from 'react-redux';
+import CardDetails from "../CardDetails/CardDetails";
+import { useEffect } from "react";
 
 export function Details(props){
      
@@ -15,7 +13,7 @@ export function Details(props){
 
      useEffect(() => {
        dispatch(getRecipeById(id))
-     }, [id])     
+     }, [id]) // eslint-disable-line react-hooks/exhaustive-deps 
     
      return (
      <div>

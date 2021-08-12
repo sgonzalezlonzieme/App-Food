@@ -4,15 +4,16 @@ const { v4: uuidv4 } = require('uuid');
 
 const router = Router()
 
-router.post('/', async (req, res, next)=>{
+router.post('/create', async (req, res, next)=>{
      
      try{
 
      let id = uuidv4();
      
-     const {title, summary, spoonacularScore,  healthScore,  analyzedInstructions, types} = req.body;
+     const {title, image, summary, spoonacularScore,  healthScore,  analyzedInstructions, diets} = req.body;
 
      const newRecipe = await Recipe.create({
+        image,
         id,
         title: title,
         summary: summary,
@@ -21,7 +22,7 @@ router.post('/', async (req, res, next)=>{
         analyzedInstructions: analyzedInstructions,    
      })
           
-     await newRecipe.addDiets(types);
+     await newRecipe.addDiets(diets);
      
      res.json(newRecipe)
 

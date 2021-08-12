@@ -11,6 +11,7 @@ const router = Router()
 router.get('/', async (req, res, next) => { 
     const {name} = req.query;
 
+
     if(!name){
         let recipes = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`)
        
@@ -47,23 +48,23 @@ router.get('/', async (req, res, next) => {
             },
             include: Diet      
         });
-           
-        //Mejorar el código, demasiados pasos. Ver como evitar data. 
+          
         let recipes = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`)
 
         //https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&query=${title}
         
         let recipesAll = recipes.data.results
+                                                //Para evitar el sensite case
+        let result2 = recipesAll.filter(obj => {return obj.title.toLowerCase().includes(name.toLowerCase())})
 
-        let result2 = recipesAll.filter(obj => obj.title.includes(name))
-         
+      
         let mapResult = result2.map(p => {return {
             title: p.title,
             image: p.image,
             diets: p.diets,
             id: p.id,
         }})
-
+        
         let result3 = findDatabase.concat(mapResult)
     
         return res.send(result3)
@@ -86,8 +87,23 @@ router.get('/', async (req, res, next) => {
              
              const filtrado = findDatabase.find(p => p.id == idReceta)
         
+             let {image, title,
+                dishTypes, diets, summary, spoonacularScore, healthScore, analyzedInstructions, id} = filtrado
+
+             let obj = {
+                id: id,
+                image: image,
+                title: title,
+                dishTypes: dishTypes,
+                diets: diets.map(p => {return {name:p.name, id: p.id}}),
+                summary: summary,
+                spoonacularScore: spoonacularScore,
+                healthScore: healthScore,
+                analyzedInstructions,
+        }
+
              if(filtrado){
-                 res.send(filtrado)
+                 res.send(obj)
              }else{
                  res.send('No recipes found')
              }
@@ -103,7 +119,7 @@ router.get('/', async (req, res, next) => {
                 
             let analyzedResult1 = analyzedInstructions[0]?.steps.map(p => p.step)
         
-
+            
             let obj = {
                 id: id,
                 image: image,
