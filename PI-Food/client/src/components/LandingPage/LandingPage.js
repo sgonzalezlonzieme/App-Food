@@ -7,7 +7,6 @@ import { getRecipes } from '../../actions';
 
 export function LandingPage(){
     let dispatch = useDispatch()
-    
    useEffect(() => {
     dispatch(getRecipes())
   }, []) // eslint-disable-line react-hooks/exhaustive-deps

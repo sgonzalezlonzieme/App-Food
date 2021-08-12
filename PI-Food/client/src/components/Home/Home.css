@@ -1,8 +1,23 @@
 .app {
     justify-content: center;
+    background-color: rgb(33, 201, 33);
 }
 
 .RecipesHome {
+    display: -moz-inline-stack;
+    justify-content: auto;
+    background-color: rgb(33, 201, 33);
+    box-shadow: black;
+}
+
+.OrderButton{
+    display: -moz-inline-stack;
+    justify-content: auto;
+    background-color: rgb(33, 201, 33);
+    box-shadow: black;
+}
+
+.TypeOfDietButton{
     display: -moz-inline-stack;
     justify-content: auto;
     background-color: rgb(33, 201, 33);

@@ -5,6 +5,7 @@ export const GET_RECIPES_ID = 'GET_RECIPES_ID';
 export const POST_NEW_RECIPE = 'POST_NEW_RECIPE';
 export const GET_RECIPES = 'GET_RECIPES';
 export const GET_RECIPE = 'GET_RECIPE'
+export const RECIPE_TYPE = 'RECIPE_TYPE'
 
 //Pasar a arrow fuction
 export const getDiets = () => {
@@ -48,5 +49,19 @@ export const getRecipes = () => {
     return dispatch({ type: GET_RECIPES, payload: results });
       }
 }
-  
+
+export const getRecipesByDiet = (type, data) => {
+  return (dispatch) => {
+    switch (type) {
+      case "FILTER_DIETS": 
+        return dispatch({ type: RECIPE_TYPE, payload: {type:"FILTER_DIETS", data} });
+      case "RATING":
+        return dispatch({ type: RECIPE_TYPE, payload: {type: "RATING", data} });
+      case "ORDER":
+        return dispatch({ type: RECIPE_TYPE, payload:  {type: "ORDER", data} });
+      default:
+        break;
+    }
+   }
+ }  
 

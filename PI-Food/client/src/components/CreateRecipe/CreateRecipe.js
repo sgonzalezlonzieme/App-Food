@@ -17,8 +17,6 @@ export function CreateRecipe(){
         diets:[],
     })
 
-   
- 
     useEffect(() => {
     dispatch(getDiets())
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
@@ -40,41 +38,43 @@ export function CreateRecipe(){
 
     function HandleDiets(event){
         setRecipeInfo({
-            ...recipeInfo, 
+            ...recipeInfo,       //buscar si hay otra forma de hacerlo //selectedOptions
             [event.target.name]: Array.from(event.target.selectedOptions).map(p=> p.value)
         })
     }
-     //Poner los required en los que sea allowNull true del back
+  
+     //Ver required
+
      //Ver porque me renderiza object en las diets
     return(
     <div>
         <form onSubmit={(event) => handleSubmit(event)}>
             <div>
                <label>Title </label>
-               <input type="text" name="title" value={recipeInfo.title} onChange={HandleChange}/>
+               <input type="text" name="title" value={recipeInfo.title} onChange={HandleChange} required/>
             </div>
             <div>
                <label>Summary </label> 
-               <input type="text" name="summary" value={recipeInfo.summary} onChange={HandleChange}/>
+               <input type="text" name="summary" value={recipeInfo.summary} onChange={HandleChange} required/>
             </div>
             <div>
                <label>Score </label> 
-               <input type="number" min="0" max="100" name="spoonacularScore" value={recipeInfo.spoonacularScore} onChange={HandleChange}/>
+               <input type="number" min="0" max="100" name="spoonacularScore" value={recipeInfo.spoonacularScore} onChange={HandleChange} required/>
             </div>
             <div>
                <label>Healthscore </label> 
-               <input type="number" min="0" max="100" name="healthScore" value={recipeInfo.healthScore} onChange={HandleChange}/>
+               <input type="number" min="0" max="100" name="healthScore" value={recipeInfo.healthScore} onChange={HandleChange} required/>
             </div>
             <div>
                <label>Instructions </label> 
-               <textarea type="text" name="analyzedInstructions" value={recipeInfo.analyzedInstructions} onChange={HandleChange}/>
+               <textarea type="text" name="analyzedInstructions" value={recipeInfo.analyzedInstructions} onChange={HandleChange} required/>
             </div>
             <div>
                <label>Image </label> 
-               <input type="text" name="image" value={recipeInfo.image} onChange={HandleChange}/>
+               <input type="text" name="image" value={recipeInfo.image} onChange={HandleChange} required/>
             </div>
             <div>
-            <select name="diets" onChange={HandleDiets} multiple="multiple">
+            <select name="diets" onChange={HandleDiets} multiple="multiple" required>
                 {dietsMap.map(r => {
                  return <option value={r.id}>{r.name}</option>
                 })}

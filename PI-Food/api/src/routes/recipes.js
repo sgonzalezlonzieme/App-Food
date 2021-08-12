@@ -9,6 +9,7 @@ const {API_KEY} = process.env;
 const router = Router()
 
 router.get('/', async (req, res, next) => { 
+
     const {name} = req.query;
 
 
@@ -22,17 +23,20 @@ router.get('/', async (req, res, next) => {
                     image: p.image,
                     diets: p.diets,
                     id: p.id,
-                }})
+                    spoonacularScore: p.spoonacularScore
+                }
+            })
 
-        const database = await Recipe.findAll()
+        const database = await Recipe.findAll({include: Diet})
 
         //let result3 = recipesAll.concat(database)
 
         let databaseResult = database.map(p => {return {  
             title: p.title,
             image: p.image,
-            diets: p.diets,
+            diets: p.diets.map(r => r.name),
             id: p.id,
+            spoonacularScore: p.spoonacularScore,
         }})
          
         let render = recipesAll1.concat(databaseResult)
@@ -51,21 +55,27 @@ router.get('/', async (req, res, next) => {
           
         let recipes = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`)
 
-        //https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&query=${title}
-        
         let recipesAll = recipes.data.results
                                                 //Para evitar el sensite case
         let result2 = recipesAll.filter(obj => {return obj.title.toLowerCase().includes(name.toLowerCase())})
 
       
-        let mapResult = result2.map(p => {return {
+        let mapResultApi = result2.map(p => {return {
             title: p.title,
             image: p.image,
             diets: p.diets,
             id: p.id,
         }})
-        
-        let result3 = findDatabase.concat(mapResult)
+
+        let mapResultData = findDatabase.map(p => {return {
+            title: p.title,
+            image: p.image,
+            diets: p.diets.map(p => p.name),
+            id: p.id,
+        }})
+       
+
+        let result3 = mapResultData.concat(mapResultApi)
     
         return res.send(result3)
 
@@ -95,7 +105,7 @@ router.get('/', async (req, res, next) => {
                 image: image,
                 title: title,
                 dishTypes: dishTypes,
-                diets: diets.map(p => {return {name:p.name, id: p.id}}),
+                diets: diets.map(p => p.name),
                 summary: summary,
                 spoonacularScore: spoonacularScore,
                 healthScore: healthScore,

@@ -8,5 +8,6 @@ export default function RecipesCards(props){
               <div classame='image'>
                    <img src={props.image} alt={props.title}/>
                    </div>
+               <div classame='title' key={props.spoonacularScore}><strong>{props.spoonacularScore}</strong></div>
            </div>)
 }    
