@@ -1,6 +1,8 @@
 import "./RecipesCards.css"
 
 export default function RecipesCards(props){
+
+    
  return   (<div className='cardDiv'>
          
               <div classame='title' key={props.title}><strong>{props.title}</strong></div>
@@ -8,6 +10,5 @@ export default function RecipesCards(props){
               <div classame='image'>
                    <img src={props.image} alt={props.title}/>
                    </div>
-               <div classame='title' key={props.spoonacularScore}><strong>{props.spoonacularScore}</strong></div>
-           </div>)
+              </div>)
 }    
