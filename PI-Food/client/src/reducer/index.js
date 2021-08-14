@@ -33,7 +33,7 @@ const initialState = {
                 return  {...state, recipesFilter: [...state.recipes.filter(r => r.diets?.includes(action.payload))],
                 filterBy: action.payload}      
             }
-        case ORDER_TYPE:
+        case ORDER_TYPE: //mensaje para pushear
              switch (action.payload) {
                 // case "FILTER_DIETS":
                 //   return  {...state, recipesFilter: [...state.recipes.filter(r => r.diets?.includes(action.payload))],
