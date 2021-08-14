@@ -17,19 +17,28 @@ const initialState = {
         case GET_RECIPES:
            return {...state, recipes: action.payload, recipesFilter: action.payload}
         case GET_RECIPES_QUERY:
-            return {...state, recipes: action.payload}
+            return {...state, recipes: action.payload, recipesFilter: action.payload}
         case GET_RECIPES_ID:
             return {...state, recipe: action.payload}
         case POST_NEW_RECIPE:
             return {...state, newRecipe: action.payload}
         case GET_DIETS:
             return {...state, diets: action.payload}
+        case FILTER_DIETS:
+            if(action.payload === "All"){
+                return {...state, recipesFilter: state.recipes,
+                    filterBy: action.payload
+                }
+            }else{
+                return  {...state, recipesFilter: [...state.recipes.filter(r => r.diets?.includes(action.payload))],
+                filterBy: action.payload}      
+            }
         case ORDER_TYPE:
              switch (action.payload) {
-                case "FILTER_DIETS":
-                  return  {...state, recipesFilter: [...state.recipes.filter(r => r.diets?.includes(action.payload))],
-                  filterBy: action.payload
-                }
+                // case "FILTER_DIETS":
+                //   return  {...state, recipesFilter: [...state.recipes.filter(r => r.diets?.includes(action.payload))],
+                //   filterBy: action.payload
+                // }
                 case "HighToLow":
                   return {...state,  recipesFilter: [...state.recipesFilter.sort((a,b) => (a.spoonacularScore > b.spoonacularScore) ? 1 : ((b.spoonacularScore > a.spoonacularScore) ? -1 : 0))],
                   orderBy: action.payload

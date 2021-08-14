@@ -18,9 +18,13 @@ let dispatch = useDispatch()
         dispatch(OrderType(event.target.value))
     }
 
+    function handleChangeDiets(event){
+        event.preventDefault()
+        dispatch(OrderDiet(event.target.value))
+    }
     return (
         <div>
-        <select onChange={(event)=> handleChangeOrder(event)}>
+        <select onChange={(event)=> handleChangeDiets(event)}>
             <option value="All">All Diets</option>
             {allDiets.map(d => 
             <option value={d.name}>{d.name}</option>)}

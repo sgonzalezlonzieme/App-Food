@@ -59,7 +59,13 @@ export const OrderType = (data) => {
     }  
 }
 
+export const OrderDiet = (data) => {
+  return (dispatch) => {
+    console.log(data)
+    return dispatch({ type: "FILTER_DIETS", payload: data});
 
+    }  
+}
    
    
   
