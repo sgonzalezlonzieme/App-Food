@@ -10,5 +10,6 @@ export default function RecipesCards(props){
               <div classame='image'>
                    <img src={props.image} alt={props.title}/>
                    </div>
-              </div>)
+              </div>) //dejame pushear!!
+              
 }    
