@@ -40,7 +40,7 @@ router.get('/', async (req, res, next) => {
         }})
          
         let render = recipesAll1.concat(databaseResult)
-        res.send(render)
+     
         return res.send(render)
     } 
     try{
