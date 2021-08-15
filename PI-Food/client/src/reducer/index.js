@@ -35,10 +35,6 @@ const initialState = {
             }
         case ORDER_TYPE: //mensaje para pushe
              switch (action.payload) {
-                // case "FILTER_DIETS":
-                //   return  {...state, recipesFilter: [...state.recipes.filter(r => r.diets?.includes(action.payload))],
-                //   filterBy: action.payload
-                // }
                 case "HighToLow":
                   return {...state,  recipesFilter: [...state.recipesFilter.sort((a,b) => (a.spoonacularScore > b.spoonacularScore) ? 1 : ((b.spoonacularScore > a.spoonacularScore) ? -1 : 0))],
                   orderBy: action.payload

@@ -1,0 +1,52 @@
+.Background{
+   opacity: 1;
+   animation-name: fadeInOpacity;
+   animation-iteration-count: 1;
+   animation-timing-function: ease-in;
+   animation-duration: 2s;
+   background-size: cover; 
+   background-position: center 70%;
+   overflow:hidden;
+   width: 100vw;
+   height: 100vh; 
+    background-image: url(../../img/Fondo\ Landing\ page.jpg);
+}
+
+.ButtonIn {
+    background-color: #f4511e;
+    border: none;
+    border-radius: 5px;
+    padding: 16px 32px;
+    text-align: center;
+    margin: 4px 2px;
+    transition: 0.4s;
+    color: rgb(248, 245, 245);
+    opacity: 0.8;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 5s;
+    font-size: 25px;
+    margin: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    background-size: 250% auto;
+    box-shadow:  rgb(500, 107, 21);   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 588px;
+    bottom: 320px;
+    width: 200px;
+}
+
+.ButtonIn:hover{
+    border-radius: 5px;
+    background-position: right center; 
+    color: rgb(4, 6, 36);
+    text-decoration: none;
+    box-shadow: 0 0 4px rgb(134, 81, 31);
+    background-color: 0 0 40px rgb(214, 228, 214);
+    opacity: 1s;
+}

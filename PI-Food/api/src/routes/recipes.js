@@ -106,7 +106,7 @@ router.get('/', async (req, res, next) => {
                 title: title,
                 dishTypes: dishTypes,
                 diets: diets.map(p => p.name),
-                summary: summary,
+                summary: summary.replace,
                 spoonacularScore: spoonacularScore,
                 healthScore: healthScore,
                 analyzedInstructions,

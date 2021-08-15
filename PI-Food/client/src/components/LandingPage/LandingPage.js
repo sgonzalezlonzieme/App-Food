@@ -1,4 +1,4 @@
-// import styles from './LandingPage.css';
+import './LandingPage.css';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -14,10 +14,10 @@ export function LandingPage(){
 
 
     return (
-        <div>
-         
-            <Link to='/Home'><button>Home</button></Link>
-         
+        
+        <div className='Background'>
+            <Link to='/Home'><button className="ButtonIn">Home</button></Link>
         </div>
+      
     )
 }

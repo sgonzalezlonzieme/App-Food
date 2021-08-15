@@ -2,8 +2,6 @@ import "./CardDetails.css"
 
 export default function CardDetails(props){
         
-
-
  return   (
              <div className='cardDivDetails'>
               <label><strong>Title</strong></label>
@@ -15,7 +13,7 @@ export default function CardDetails(props){
               <label><strong>Dish type</strong></label>
               <div className='dishTypesDetails' >{props.dishTypes}</div>
               <label><strong>Summary</strong></label>
-              <div className='summaryDetails' >{props.summary}</div>
+              <div dangerouslySetInnerHTML={{__html: props.summary}} className='summaryDetails' />
               <label><strong>Score</strong></label>
               <div className='spoonacularScoreDetails'>{props.spoonacularScore}</div> 
               <label><strong>Healthscore</strong></label>
