@@ -6,46 +6,10 @@
     -webkit-align-items: center;
     align-items: center;
     /* position: fixed; */
-    /* justify-content: space-between; */
+    justify-content: space-between;
     padding: 0px;
     box-sizing: border-box;
     background-image: url(../../img/Fondo\ Nav\ 2.jpg);
-}
-
-.ButtonIn {
-    font-family: 'Fredoka One', sans-serif;
-    background-color: #e93507;
-    border-radius: 4px; 
-    padding: 16px 32px;
-    text-align: center;
-    margin: 4px 2px;
-    transition: 0.4s;
-    color: rgb(199, 33, 33);
-    opacity: 0.8;
-    font-size: 35px;
-    margin: 10px;
-    padding: 10px 20px;
-    text-align: center;
-    background-size: 250% auto;
-    box-shadow: 0 0 2px rgb(224, 146, 20);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    right: 594px;
-    bottom: 310px;
-    width: 200px;
-}
-
-.ButtonIn:hover{
-    border-radius: 2px;
-    background-position: right center; 
-    color: rgb(255, 161, 38);
-    text-decoration: none;
-    box-shadow: 1 0 2.5px rgb(255, 38, 38);
-    background-color: 0 0 40px rgb(122, 96, 39);
-    opacity: 1s;
-    box-shadow: 1 0 5px rgb(255, 161, 38);
 }
 
 .SubmitType{
@@ -180,7 +144,6 @@
     box-shadow: 1 0 2.5px rgb(255, 38, 38);
     background-color: 0 0 40px rgb(122, 96, 39);
     opacity: 1s;
-   
     box-shadow: 0 0 7px rgb(255, 161, 38);
     
 }
