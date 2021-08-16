@@ -16,7 +16,7 @@ export function Details(props){
      }, [id]) // eslint-disable-line react-hooks/exhaustive-deps 
     
      return (
-     <div>
+     <div className="classContainer">
          <div>
             <h1>Recipe Details</h1>
          </div>

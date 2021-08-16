@@ -4,20 +4,112 @@
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
 	animation-duration: 2s;
-    background-image: linear-gradient(to right, #221f1b 0%, #22180a  51%, #0f0901  100%);
-    box-shadow: 0 0 20px rgb(88, 86, 86);
+    box-shadow: 0 0 20px rgb(63, 41, 41);
     height: 90px;
     width: 100%;
     top: 0;
     left: 0;
     display: -webkit-flex;
-    display: flex;
     -webkit-align-items: center;
     align-items: center;
     position: fixed;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
+    background-image: url(../../img/Fondo\ Nav\ 2.jpg);
+}
+
+.HomeButton{
+    /* opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+    position: fixed;
+    left: 30px;
+    top: -10px;
+    max-height: 100px; */
+}
+
+.HomeButton:hover{
+    /* transform: scale(1.1);
+    transition: transform .5s ease; */
+}
+
+.SearchButton{
+    /* opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    transition: transform 250ms;
+    right: 680px;
+    bottom: 658px;
+    width: 280px;
+    height: 30px;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px rgb(90, 88, 88);
+    background-image: linear-gradient(to right, #f0d9b9 0%, #d6b891  51%, #ecd9bd  100%);
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+    font-size: 15px;
+    text-align: center; */
+}
+
+.SearchButton:hover{
+    /* background-image: linear-gradient(to right, #f5d49f 0%, #dba359  51%, #ebbf7d  100%);
+    transform: translateY(-5px); */
+}
+
+.SubmitType {
+    /* opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+    position: fixed;
+    right: 640px;
+    bottom: 658px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 7px;
+    background-color: #ecd9bd;
+    transition: transform 250ms; */
+}
+
+.SubmitType:hover{
+    /* background-color: #ebbf7d;
+    transform: translateY(-5px); */
+}
+
+.CreateButton{
+    /* opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+    position: fixed;
+    right: 250px;
+    bottom: 658px;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 7px;
+    font-family: 'Fredoka One', cursive;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #f0d9b9 0%, #d6b891  51%, #ecd9bd  100%);
+    transition: transform 250ms;
+    font-size: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgb(90, 88, 88); */
+}
+
+.CreateButton:hover{
+    /* background-image: linear-gradient(to right, #f5d49f 0%, #dba359  51%, #ebbf7d  100%);
+    transform: translateY(-5px); */
 }

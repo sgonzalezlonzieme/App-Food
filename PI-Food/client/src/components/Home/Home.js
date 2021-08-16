@@ -55,10 +55,10 @@ export function Home(){
               <div className="RecipesHome">
                    {
                        currentPosts.map(rec => (
-                            <Link to={`/recipe/details/${rec.id}`}>
-                           <div>
+                         <Link to={`/recipe/details/${rec.id}`}>
+                              <div className="RecipeHome">
                             <RecipesCards title={rec.title} spoonacularScore={rec.spoonacularScore} diets={rec.diets} image={rec.image} />
-                           </div>
+                              </div>
                            </Link>
                        ))}     
               </div>

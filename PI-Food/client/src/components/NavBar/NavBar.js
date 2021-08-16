@@ -34,8 +34,6 @@ export function NavBar(){
             </div>
             <div className='SearchButton'>
             <input type='Submit' value='Search'></input>
-            <div className="InputAll">
-            </div>
             <div className='SubmitType'>
             <input name='recipes' type='text' placeholder='Insert recipe...' 
             value={recipe} onChange={HandleChange}></input>

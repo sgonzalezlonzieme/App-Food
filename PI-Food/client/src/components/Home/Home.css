@@ -1,25 +1,31 @@
 .app {
-    justify-content: center;
-    background-color: rgb(33, 201, 33);
+    background-image: url(../../img/Fondo\ Home.jpg);
+    background-repeat: repeat;
 }
 
 .RecipesHome {
     display: -moz-inline-stack;
     justify-content: auto;
-    background-color: rgb(33, 201, 33);
-    box-shadow: black;
+    text-emphasis-color: green;
 }
+
+.RecipeHome {
+    display: -moz-inline-stack;
+    justify-content: auto;
+    text-emphasis-color: green;
+}
+
 
 .OrderButton{
     display: -moz-inline-stack;
     justify-content: auto;
-    background-color: rgb(33, 201, 33);
+  
     box-shadow: black;
 }
 
 .TypeOfDietButton{
     display: -moz-inline-stack;
     justify-content: auto;
-    background-color: rgb(33, 201, 33);
+
     box-shadow: black;
 }

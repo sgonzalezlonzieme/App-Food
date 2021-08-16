@@ -47,7 +47,7 @@ export function CreateRecipe(){
 
      //Ver porque me renderiza object en las diets
     return(
-    <div>
+    <div className="createContainer">
         <form onSubmit={(event) => handleSubmit(event)}>
             <div>
                <label>Title </label>
