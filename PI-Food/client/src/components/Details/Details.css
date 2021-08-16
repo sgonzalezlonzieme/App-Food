@@ -1,4 +1,8 @@
-.classContainer {
+.Details_Container {
     background-image: url(../../img/Fondo\ Home.jpg);
     background-repeat: repeat;
+}
+
+.Card_Details{
+    text-decoration: none;
 }

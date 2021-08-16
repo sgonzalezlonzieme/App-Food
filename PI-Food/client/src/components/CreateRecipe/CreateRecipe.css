@@ -1,4 +1,33 @@
-.createContainer {
+.CreateBackground{
     background-image: url(../../img/Fondo\ Home.jpg);
     background-repeat: repeat;
 }
+
+
+.createContainer{
+    display: flex;
+    margin-top: 50px;
+    font-family: 'Fredoka One', sans-serif;
+    color: #fdf9f9;
+    box-shadow: 3px 3px 7px rgb(20 20 20 / 80%); 
+    background-color: #e92214;
+    border-radius: 5px;
+    background-color: rgb(204, 18, 18);
+    display: inline-block;
+    left: 50px;
+}
+
+.Form{
+    display: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+    font-family: 'Fredoka One', sans-serif;
+    color: #fdf9f9;
+    cursor: pointer;
+    background-color: #e92214;
+    background-color: rgb(204, 18, 18);
+    
+}
+

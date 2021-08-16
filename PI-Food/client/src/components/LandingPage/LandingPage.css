@@ -12,41 +12,83 @@
    background-image: url(../../img/Fondo\ Landing\ page.jpg);
 }
 
-.ButtonIn {
-    background-color: #1d1513;
-    border: none;
-    border-radius: 5px;
+.LandingTitle{
+    font-family: 'Fredoka One', sans-serif;
+    background-color: #e93507;
+    border-radius: 6px; 
     padding: 16px 32px;
     text-align: center;
     margin: 4px 2px;
     transition: 0.4s;
-    color: rgb(189, 22, 22);
+    color: rgb(255, 157, 0);
     opacity: 0.8;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
 	animation-duration: 5s;
-    font-size: 25px;
+    font-size: 45px;
     margin: 10px;
     padding: 10px 20px;
     text-align: center;
     background-size: 250% auto;
-    box-shadow:  rgb(500, 107, 21);   
+    box-shadow: 0 0 2px rgb(255, 159, 4);
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
-    right: 588px;
-    bottom: 320px;
+    right: 576px;
+    bottom: 390px;
+    width: 200px;
+}
+
+.ButtonIn {
+    font-family: 'Fredoka One', sans-serif;
+    background-color: #e93507;
+    border-radius: 4px; 
+    padding: 16px 32px;
+    text-align: center;
+    margin: 4px 2px;
+    transition: 0.4s;
+    color: rgb(199, 33, 33);
+    opacity: 0.8;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 5s;
+    font-size: 35px;
+    margin: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    background-size: 250% auto;
+    box-shadow: 0 0 2px rgb(224, 146, 20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 594px;
+    bottom: 310px;
     width: 200px;
 }
 
 .ButtonIn:hover{
-    border-radius: 5px;
+    border-radius: 2px;
     background-position: right center; 
-    color: rgb(255, 38, 38);
+    color: rgb(255, 161, 38);
     text-decoration: none;
     box-shadow: 1 0 2.5px rgb(255, 38, 38);
     background-color: 0 0 40px rgb(122, 96, 39);
     opacity: 1s;
+    box-shadow: 1 0 5px rgb(255, 161, 38);
 }
+
+.LandingTitle:hover{
+    border-radius: 2px;
+    background-position: right center; 
+    color: rgb(255, 161, 38);
+    text-decoration: none;
+    box-shadow: 1 0 2.5px rgb(255, 38, 38);
+    background-color: 0 0 40px rgb(122, 96, 39);
+    opacity: 1s;
+    box-shadow: 1 0 5px rgb(255, 161, 38);
+}
+

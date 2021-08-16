@@ -1,31 +1,17 @@
-.app {
+.Home {
     background-image: url(../../img/Fondo\ Home.jpg);
     background-repeat: repeat;
+ 
 }
 
-.RecipesHome {
-    display: -moz-inline-stack;
-    justify-content: auto;
-    text-emphasis-color: green;
+.RecipesHome{
+    margin-top: 1.5;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
-.RecipeHome {
-    display: -moz-inline-stack;
-    justify-content: auto;
-    text-emphasis-color: green;
-}
-
-
-.OrderButton{
-    display: -moz-inline-stack;
-    justify-content: auto;
-  
-    box-shadow: black;
-}
-
-.TypeOfDietButton{
-    display: -moz-inline-stack;
-    justify-content: auto;
-
-    box-shadow: black;
+.FilterComponents{
+    margin-left: 20px;
 }

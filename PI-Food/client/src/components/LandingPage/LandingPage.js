@@ -2,7 +2,7 @@ import './LandingPage.css';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { getRecipes, getDiets } from '../../actions';
+import { getRecipes} from '../../actions';
 
 
 export function LandingPage(){
@@ -16,7 +16,9 @@ export function LandingPage(){
     return (
         
         <div className='Background'>
-            <Link to='/Home'><button className="ButtonIn">Home</button></Link>
+        <div className="LandingTitle">Welcome to Your Recipe World</div>
+        <Link to='/Home'><button className="ButtonIn">Home</button></Link>
+            {/* <Link to='/Home'><button className="ButtonIn">Home</button></Link> */}
         </div>
       
     )

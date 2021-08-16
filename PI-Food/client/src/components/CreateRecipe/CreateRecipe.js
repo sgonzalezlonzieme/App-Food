@@ -1,3 +1,4 @@
+import './CreateRecipe.css'
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector} from "react-redux";
 import { getNewRecipe, getDiets } from "../../actions";
@@ -47,42 +48,44 @@ export function CreateRecipe(){
 
      //Ver porque me renderiza object en las diets
     return(
+    <div className="CreateBackground">
     <div className="createContainer">
         <form onSubmit={(event) => handleSubmit(event)}>
-            <div>
+            <div className="Form">
                <label>Title </label>
                <input type="text" name="title" value={recipeInfo.title} onChange={HandleChange} required/>
             </div>
-            <div>
+            <div className="Form">
                <label>Summary </label> 
                <input type="text" name="summary" value={recipeInfo.summary} onChange={HandleChange} required/>
             </div>
-            <div>
+            <div className="Form">
                <label>Score </label> 
                <input type="number" min="0" max="100" name="spoonacularScore" value={recipeInfo.spoonacularScore} onChange={HandleChange} required/>
             </div>
-            <div>
+            <div className="Form">
                <label>Healthscore </label> 
                <input type="number" min="0" max="100" name="healthScore" value={recipeInfo.healthScore} onChange={HandleChange} required/>
             </div>
-            <div>
+            <div className="Form">
                <label>Instructions </label> 
                <textarea type="text" name="analyzedInstructions" value={recipeInfo.analyzedInstructions} onChange={HandleChange} required/>
             </div>
-            <div>
+            <div className="Form">
                <label>Image </label> 
                <input type="text" name="image" value={recipeInfo.image} onChange={HandleChange} required/>
             </div>
-            <div>
+            <div className="Form">
             <select name="diets" onChange={HandleDiets} multiple="multiple" required>
                 {dietsMap.map(r => {
                  return <option value={r.id}>{r.name}</option>
                 })}
             </select>
             </div>
-            <div>
+            <div className="DietsForm">
                 <input type="submit" value="Send"/>
             </div>
         </form>
+    </div>
     </div>)
 }

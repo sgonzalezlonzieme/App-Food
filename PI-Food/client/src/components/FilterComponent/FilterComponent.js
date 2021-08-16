@@ -23,22 +23,28 @@ let dispatch = useDispatch()
         dispatch(OrderDiet(event.target.value))
     }
     return (
-        <div>
+        <div className="FilterContainer">
+        <div className="DietsFilter" >
         <select onChange={(event)=> handleChangeDiets(event)}>
             <option value="All">All Diets</option>
             {allDiets.map(d => 
             <option value={d.name}>{d.name}</option>)}
         </select>
+        </div>
+        <div className="AZFilter" >
         <select onChange={(event)=> handleChangeOrder(event)}> 
             <option value="All">Default</option>
             <option value="A-Z">A-Z</option>
             <option value="Z-A">Z-A</option>
         </select>
-        <select onChange={(event)=> handleChangeOrder(event)}> 
+        </div>
+        <div claseName="HTLFilter">
+        <select  onChange={(event)=> handleChangeOrder(event)}> 
             <option value="All">Default</option>
              <option value="HighToLow">HighToLow</option>
             <option value="LowToHigh">LowToHigh</option>
         </select>
+        </div>
         </div>
     )  
 }

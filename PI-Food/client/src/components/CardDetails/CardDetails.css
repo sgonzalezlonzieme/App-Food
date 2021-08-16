@@ -1,0 +1,16 @@
+.cardDivDetails{
+    display: wrap;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    margin-left: 204px;
+    width: 70%;
+    font-family: 'Fredoka One', sans-serif;
+    border: 5px solid rgb(218, 5, 5);
+    text-align: center;
+    background-color: rgb(190, 23, 23);
+    border-radius: 3px;
+    border: 1.6px solid rgb(231, 61, 61);
+    box-shadow: 3px 3px 16px rgb(255, 38, 38);
+    text-decoration: none;
+    padding: 10px;
+ }

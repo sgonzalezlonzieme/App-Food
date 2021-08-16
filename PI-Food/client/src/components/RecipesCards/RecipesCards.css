@@ -1,0 +1,49 @@
+.CardsContainer{
+    margin-top: 160px;    
+    position: relative;   
+    display: inline-block;   
+    width: 323px;
+    height: 400px;
+    text-align: center;
+    background-color: rgb(218, 5, 5);
+    border-radius: 3px;
+    margin: 43px;    
+    border: 1.6px solid rgb(231, 61, 61);
+    box-shadow: 1px rgb(255, 38, 38);
+    text-decoration: none;
+}
+
+.CardsTitle{
+    color: #FFE6E6;
+    text-transform: capitalize;
+    display: flex;
+    -webkit-justify-content: space-evenly;
+    justify-content: space-evenly;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    font-size: 25px;
+    font-family: 'Fredoka One', sans-serif;
+    font-weight: normal;
+   
+}
+
+ .CardsDiets{
+    color: #FFE6E6;
+    text-align: justify;
+    font-family: 'Fredoka One', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+    margin: 10px;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-evenly;
+    -webkit-align-items: center;
+    -webkit-flex-wrap: wrap;
+}
+
+.CardsImage{
+   border-radius: 2px;
+   bottom: auto;
+}

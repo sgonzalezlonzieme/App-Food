@@ -1,0 +1,18 @@
+.FilterContainer{
+  display: inline-block;
+  position: relative;
+}
+
+.DietsFilter{
+    display: inline-block;
+    position: relative;
+    left: 200px;
+}
+
+.AZFilter{
+    display: inline-block;
+}
+
+.HTLFilter{
+    display: inline-block;
+}

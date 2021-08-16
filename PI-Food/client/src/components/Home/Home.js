@@ -48,8 +48,8 @@ export function Home(){
  
 
    return ( 
-       <div className="app">
-             <div>
+       <div className="Home">
+             <div className="FilterComponents">
                  <FilterComponent />
              </div>
               <div className="RecipesHome">
