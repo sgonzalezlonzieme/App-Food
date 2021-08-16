@@ -3,7 +3,7 @@
     cursor: pointer;
     color: rgb(247, 239, 239);
     box-shadow: 0px 0px 1px rgb(255, 230, 230);
-    background-color: rgb(114, 7, 7);
+    background-color: rgb(189, 6, 6);
     border-radius: 2.5px;
     font-family: 'Fredoka One', sans-serif;
     padding: 5px;
@@ -15,6 +15,7 @@
     transition: transform .8s ease;
     transform: scale(1.0);
     opacity: 1.2;
+    
 }
 
 .pageLink:hover{

@@ -82,7 +82,7 @@ export function CreateRecipe(){
                 })}
             </select>
             </div>
-            <div className="DietsForm">
+            <div className="SubmitForm">
                 <input type="submit" value="Send"/>
             </div>
         </form>

@@ -1,18 +1,32 @@
 .FilterContainer{
-  display: inline-block;
-  position: relative;
+  /* display: flex; */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
 }
 
-.DietsFilter{
-    display: inline-block;
-    position: relative;
-    left: 200px;
+/* .DietsFilter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
 .AZFilter{
-    display: inline-block;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
 .HTLFilter{
-    display: inline-block;
-}
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+} */

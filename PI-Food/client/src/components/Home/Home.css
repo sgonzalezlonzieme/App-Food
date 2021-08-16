@@ -1,7 +1,14 @@
 .Home {
-    background-image: url(../../img/Fondo\ Home.jpg);
+    background-image: url(../../img/fondo\ comida.jpg);
     background-repeat: repeat;
- 
+    /* para centrar */
+    display: flex; 
+    flex-direction: row;
+    justify-content: center; 
+    align-content: center; 
+    align-items: center; 
+    flex-wrap: wrap;    
+    
 }
 
 .RecipesHome{
@@ -10,8 +17,11 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center; 
+    align-content: center; 
+    align-items: center; 
+    flex-wrap: wrap;   
 }
 
-.FilterComponents{
-    margin-left: 20px;
-}

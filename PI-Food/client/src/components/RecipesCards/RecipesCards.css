@@ -9,7 +9,7 @@
     border-radius: 3px;
     margin: 43px;    
     border: 1.6px solid rgb(231, 61, 61);
-    box-shadow: 1px rgb(255, 38, 38);
+    box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.4);
     text-decoration: none;
 }
 
@@ -47,3 +47,14 @@
    border-radius: 2px;
    bottom: auto;
 }
+
+img{
+    border-radius: 2px;
+    bottom: auto;
+    max-height: 260px;
+    width:  100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+ }
+ 

@@ -1,33 +1,44 @@
 .CreateBackground{
-    background-image: url(../../img/Fondo\ Home.jpg);
+    background-image: url(../../img/fondo\ comida.jpg);
     background-repeat: repeat;
 }
 
-
 .createContainer{
-    display: flex;
-    margin-top: 50px;
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
     font-family: 'Fredoka One', sans-serif;
     color: #fdf9f9;
     box-shadow: 3px 3px 7px rgb(20 20 20 / 80%); 
     background-color: #e92214;
     border-radius: 5px;
     background-color: rgb(204, 18, 18);
-    display: inline-block;
-    left: 50px;
+    left: 420px;
+    bottom: 10px;
 }
 
 .Form{
-    display: wrap;
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 14px;
+    padding: 2px;
+    padding-bottom: 20px;
     font-family: 'Fredoka One', sans-serif;
     color: #fdf9f9;
-    cursor: pointer;
-    background-color: #e92214;
     background-color: rgb(204, 18, 18);
-    
+    bottom: 10px;
+    left: 180px;
+    width: 500px;
 }
 
+.Form textarea{
+    resize: none;
+    height: 120px;
+}
+
+.SubmitForm{
+    position: relative;
+    left: 240px;
+    padding-bottom: 10px;
+}

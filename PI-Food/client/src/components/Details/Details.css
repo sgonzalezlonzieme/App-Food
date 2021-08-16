@@ -1,8 +1,13 @@
 .Details_Container {
-    background-image: url(../../img/Fondo\ Home.jpg);
+    background-image: url(../../img/fondo\ comida.jpg);
     background-repeat: repeat;
+    display: inline-block;
+  
+ 
 }
 
 .Card_Details{
+    text-decoration: none;
+    margin-top: 2px;
     text-decoration: none;
 }

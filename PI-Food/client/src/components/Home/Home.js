@@ -49,9 +49,9 @@ export function Home(){
 
    return ( 
        <div className="Home">
-             <div className="FilterComponents">
+           
                  <FilterComponent />
-             </div>
+
               <div className="RecipesHome">
                    {
                        currentPosts.map(rec => (

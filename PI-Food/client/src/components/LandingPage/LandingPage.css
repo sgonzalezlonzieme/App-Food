@@ -14,8 +14,8 @@
 
 .LandingTitle{
     font-family: 'Fredoka One', sans-serif;
-    background-color: #e93507;
-    border-radius: 6px; 
+    background-color: #1a0702;
+    border-radius: 1px; 
     padding: 16px 32px;
     text-align: center;
     margin: 4px 2px;
@@ -36,15 +36,27 @@
     align-items: center;
     justify-content: center;
     position: fixed;
-    right: 576px;
+    right: 475px;
     bottom: 390px;
-    width: 200px;
+    width: 400px;
+    margin-top: 2rem;
+}
+
+.LandingTitle:hover{
+    border-radius: 2px;
+    background-position: right center; 
+    color: rgb(255, 161, 38);
+    text-decoration: none;
+    box-shadow: 1 0 2.5px rgb(255, 38, 38);
+    background-color: 0 0 40px rgb(122, 96, 39);
+    opacity: 1s;
+    box-shadow: 1 0 5px rgb(255, 161, 38);
 }
 
 .ButtonIn {
     font-family: 'Fredoka One', sans-serif;
     background-color: #e93507;
-    border-radius: 4px; 
+    border-radius: 1px; 
     padding: 16px 32px;
     text-align: center;
     margin: 4px 2px;
@@ -65,9 +77,10 @@
     align-items: center;
     justify-content: center;
     position: fixed;
-    right: 594px;
+    right: 100%;
     bottom: 310px;
     width: 200px;
+    cursor: pointer;
 }
 
 .ButtonIn:hover{
@@ -81,14 +94,4 @@
     box-shadow: 1 0 5px rgb(255, 161, 38);
 }
 
-.LandingTitle:hover{
-    border-radius: 2px;
-    background-position: right center; 
-    color: rgb(255, 161, 38);
-    text-decoration: none;
-    box-shadow: 1 0 2.5px rgb(255, 38, 38);
-    background-color: 0 0 40px rgb(122, 96, 39);
-    opacity: 1s;
-    box-shadow: 1 0 5px rgb(255, 161, 38);
-}
 
