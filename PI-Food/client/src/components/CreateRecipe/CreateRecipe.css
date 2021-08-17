@@ -1,43 +1,42 @@
-.CreateBackground{
-    background-image: url(../../img/fondo\ comida.jpg);
-    background-repeat: repeat;
-}
-
-.createContainer{
+.Create_createContainer{
     position: relative;
-    display: inline-block;
+    display: flex;
     margin-top: 20px;
-    font-family: 'Fredoka One', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #fdf9f9;
     box-shadow: 3px 3px 7px rgb(20 20 20 / 80%); 
-    background-color: #e92214;
+    background-color:rgb(216, 80, 1);
     border-radius: 5px;
-    background-color: rgb(204, 18, 18);
-    left: 420px;
+    left: 348px;
     bottom: 10px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
 }
 
-.Form{
+.Create_Form{
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 14px;
     padding: 2px;
     padding-bottom: 20px;
-    font-family: 'Fredoka One', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #fdf9f9;
-    background-color: rgb(204, 18, 18);
+    background-color: rgb(216, 80, 1);
     bottom: 10px;
     left: 180px;
     width: 500px;
 }
 
-.Form textarea{
+.Create_Form textarea{
     resize: none;
     height: 120px;
 }
 
-.SubmitForm{
+.Create_SubmitForm{
     position: relative;
     left: 240px;
     padding-bottom: 10px;

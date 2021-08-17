@@ -1,9 +1,11 @@
 import {useDispatch} from "react-redux"
-import { getRecipesByQuery } from "../../actions"
+import { getRecipes, getRecipesByQuery } from "../../actions"
 import { useState } from "react";
 import { useHistory } from "react-router";
 import './NavBar.css'
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch, faBookOpen } from '@fortawesome/free-solid-svg-icons'
 
 
 export function NavBar(){
@@ -22,23 +24,24 @@ export function NavBar(){
           history.push({pathname: `/home`})
         }
         dispatch(getRecipesByQuery(recipe))
+        setRecipe("");
     }
 
 
     return(
         <div className='NavBar'>
-            <div className="leftSide">
-              <div className="links" id={showLinks ? "hidden" : ""}>
-               <a href='/home'>Home</a>
-               <a href='/recipe/create'>Create recipe</a>
+            <div className="NavBar_leftSide">
+              <div className="NavBar_links" id={showLinks ? "hidden" : ""}>
+               <Link to='/home' onClick={() => dispatch(getRecipes())}>Home</Link>
+               <Link to='/recipe/create'>Create recipe</Link>
               </div>
-              <button onClick={() => setShowLinks(!showLinks)}>Open</button>
+              <button onClick={() => setShowLinks(!showLinks)}><FontAwesomeIcon icon={faBookOpen}/></button>
             </div>
-            <div className="rightSide">
+            <div className="NavBar_rightSide">
             <form onSubmit={HandleSubmit}>
             <input name='recipes' type='text' placeholder='Insert recipe...' 
             value={recipe} onChange={HandleChange}></input>
-            <button type='Submit' value='Search'>Search</button>
+            <button type='Submit' value='Search'><FontAwesomeIcon icon={faSearch}/></button>
             </form>
             </div>
               

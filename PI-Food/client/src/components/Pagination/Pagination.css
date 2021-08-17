@@ -1,11 +1,11 @@
-.pageLink{
+.Pagination_pageLink{
     list-style: none;
     cursor: pointer;
     color: rgb(247, 239, 239);
     box-shadow: 0px 0px 1px rgb(255, 230, 230);
-    background-color: rgb(189, 6, 6);
+    background-color:rgb(129, 5, 5);
     border-radius: 2.5px;
-    font-family: 'Fredoka One', sans-serif;
+    font-family: 'Poppins', sans-serif;
     padding: 5px;
     padding-left: 15px;
     padding-right: 15px;
@@ -18,7 +18,7 @@
     
 }
 
-.pageLink:hover{
+.Pagination_pageLink:hover{
     background-image: rgb(0, 0, 0);
     transition: transform .3s ease;
     transform: scale(1.1);

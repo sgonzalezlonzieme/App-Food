@@ -10,9 +10,9 @@ export function Pagination({postsPerPage, totalPosts, paginate}){
 
     return (<div>
         <nav>
-        <ul className="pagination">
+        <ul className="Pagination">
             {pageNumbers.map(number => (
-                   <button onClick={() => paginate(number)} className="pageLink">
+                   <button onClick={() => paginate(number)} className="Pagination_pageLink">
                        {number}
                    </button>
             ))}

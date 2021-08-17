@@ -32,14 +32,14 @@ export function Home(){
       setPosts(recipes)
     }else{
       setPosts(recipesFilter)
-    }
+    } 
   }, [recipes, recipesFilter, filterBy, orderBy])
 
-  useEffect(() => {
-    if (!recipes.length) {
-      dispatch(getRecipes());
-    }
-  });
+  // useEffect(() => {
+  //   if (recipes.length) {
+  //     dispatch(getRecipes());
+  //   }
+  // }, []);
 
  
   function paginate(pageNumber){
@@ -49,8 +49,9 @@ export function Home(){
 
    return ( 
        <div className="Home">
-           
+              <div className="Home_filterComponent">
                  <FilterComponent />
+              </div>
 
               <div className="RecipesHome">
                    {

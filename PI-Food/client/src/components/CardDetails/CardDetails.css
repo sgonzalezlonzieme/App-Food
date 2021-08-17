@@ -1,27 +1,28 @@
-.cardDivDetails{
+.Details_cardDivDetails{
     display: wrap;
     margin-top: 40px;
     margin-bottom: 30px;
-    margin-left: 204px;
+    margin-left: 90px;
     width: 70%;
-    border: 5px solid rgb(218, 5, 5);
     text-align: center;
-    background-color: rgb(190, 23, 23);
+    background-color: rgb(216, 80, 1);
     border-radius: 3px;
     border: 1.6px solid rgb(231, 61, 61);
     box-shadow: 3px 3px 16px rgb(255, 38, 38);
     text-decoration: none;
     padding: 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    
  }
 
-.cardDivDetails label{
+.Details_cardDivDetails label{
   margin-bottom: 5px;
   padding: 15px;
 }
 
 /* Hacerlo con todos */
-.TotalDetails{
+.Details_TotalDetails{
   margin-bottom: 5px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
 }

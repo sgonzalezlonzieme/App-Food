@@ -18,7 +18,7 @@ export function Details(props){
      return (
      <div className="Details_Container">
          <div>
-            <div className="Card_Details">
+            <div className="Details_CardDetails">
             <CardDetails title={recipe.title} diets={recipe.diets} image={recipe.image}
             dishTypes={recipe.dishTypes} summary={recipe.summary} 
             spoonacularScore={recipe.spoonacularScore} healthScore={recipe.healthScore}

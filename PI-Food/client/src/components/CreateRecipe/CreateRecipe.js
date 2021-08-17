@@ -34,7 +34,7 @@ export function CreateRecipe(){
     function handleSubmit(event){
       event.preventDefault()
       dispatch(getNewRecipe(recipeInfo))
-      alert('Recipes added')
+      alert('Recipe added')
     }
 
     function HandleDiets(event){
@@ -48,44 +48,42 @@ export function CreateRecipe(){
 
      //Ver porque me renderiza object en las diets
     return(
-    <div className="CreateBackground">
-    <div className="createContainer">
+    <div className="Create_createContainer">
         <form onSubmit={(event) => handleSubmit(event)}>
-            <div className="Form">
+            <div className="Create_Form">
                <label>Title </label>
                <input type="text" name="title" value={recipeInfo.title} onChange={HandleChange} required/>
             </div>
-            <div className="Form">
+            <div className="Create_Form">
                <label>Summary </label> 
-               <input type="text" name="summary" value={recipeInfo.summary} onChange={HandleChange} required/>
+               <textarea type="text" name="summary" value={recipeInfo.summary} onChange={HandleChange} required/>
             </div>
-            <div className="Form">
+            <div className="Create_Form">
                <label>Score </label> 
                <input type="number" min="0" max="100" name="spoonacularScore" value={recipeInfo.spoonacularScore} onChange={HandleChange} required/>
             </div>
-            <div className="Form">
+            <div className="Create_Form">
                <label>Healthscore </label> 
                <input type="number" min="0" max="100" name="healthScore" value={recipeInfo.healthScore} onChange={HandleChange} required/>
             </div>
-            <div className="Form">
+            <div className="Create_Form">
                <label>Instructions </label> 
                <textarea type="text" name="analyzedInstructions" value={recipeInfo.analyzedInstructions} onChange={HandleChange} required/>
             </div>
-            <div className="Form">
+            <div className="Create_Form">
                <label>Image </label> 
                <input type="text" name="image" value={recipeInfo.image} onChange={HandleChange} required/>
             </div>
-            <div className="Form">
+            <div className="Create_Form">
             <select name="diets" onChange={HandleDiets} multiple="multiple" required>
                 {dietsMap.map(r => {
                  return <option value={r.id}>{r.name}</option>
                 })}
             </select>
             </div>
-            <div className="SubmitForm">
+            <div className="Create_SubmitForm">
                 <input type="submit" value="Send"/>
             </div>
         </form>
-    </div>
     </div>)
 }

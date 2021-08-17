@@ -1,4 +1,4 @@
-.Background{
+.Lading_Background{
    opacity: 1;
    animation-name: fadeInOpacity;
    animation-iteration-count: 1;
@@ -12,8 +12,8 @@
    background-image: url(../../img/Fondo\ Landing\ page.jpg);
 }
 
-.LandingTitle{
-    font-family: 'Fredoka One', sans-serif;
+.Lading_LandingTitle{
+    font-family: 'Poppins', sans-serif;
     background-color: #1a0702;
     border-radius: 1px; 
     padding: 16px 32px;
@@ -42,7 +42,7 @@
     margin-top: 2rem;
 }
 
-.LandingTitle:hover{
+.Lading_LandingTitle:hover{
     border-radius: 2px;
     background-position: right center; 
     color: rgb(255, 161, 38);
@@ -53,10 +53,10 @@
     box-shadow: 1 0 5px rgb(255, 161, 38);
 }
 
-.ButtonIn {
-    font-family: 'Fredoka One', sans-serif;
-    background-color: #e93507;
-    border-radius: 1px; 
+.Lading_ButtonIn {
+    font-family: 'Poppins', sans-serif;
+    background-color: #180703;
+    border-radius: 4px; 
     padding: 16px 32px;
     text-align: center;
     margin: 4px 2px;
@@ -67,31 +67,31 @@
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
 	animation-duration: 5s;
-    font-size: 35px;
+    font-size: 32px;
     margin: 10px;
     padding: 10px 20px;
     text-align: center;
     background-size: 250% auto;
-    box-shadow: 0 0 2px rgb(224, 146, 20);
+    box-shadow: 0 0 10px rgb(224, 146, 20);
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
-    right: 100%;
+    right: 602px;
     bottom: 310px;
     width: 200px;
     cursor: pointer;
 }
 
-.ButtonIn:hover{
-    border-radius: 2px;
+.Lading_ButtonIn:hover{
+    border-radius: 6    px;
     background-position: right center; 
     color: rgb(255, 161, 38);
     text-decoration: none;
     box-shadow: 1 0 2.5px rgb(255, 38, 38);
     background-color: 0 0 40px rgb(122, 96, 39);
     opacity: 1s;
-    box-shadow: 1 0 5px rgb(255, 161, 38);
+    box-shadow: 1 0 20px rgb(255, 161, 38);
 }
 
 
