@@ -4,6 +4,7 @@
     height: 80px;
     font-family: 'Poppins', sans-serif;
     display: flex;
+    box-shadow: 5px 5px 5px rgb(248, 245, 245);
 }
 
 .NavBar .NavBar_leftSide{
@@ -16,16 +17,16 @@
 
 .NavBar .NavBar_leftSide .NavBar_links{
    max-height: 80px;
+   
+   
 }
 
 .NavBar .NavBar_leftSide .NavBar_links a{
      text-decoration: none;
-     color: rgb(174, 189, 212);
-     font-size: 25px;
+     color: white;
+     font-size: 30px;
      margin-left: 15px;
  }
-
-
 
 .NavBar .NavBar_rightSide{
     flex: 50%;
@@ -33,6 +34,7 @@
     align-items: center;
     justify-content: flex-end;
     padding-right: 25px;
+    margin-right: 40px;
 }
 
 .NavBar .NavBar_rightSide input{
@@ -43,12 +45,14 @@
     font-size: 20px;
     padding-left: 15px;
     color: black;
+    justify-content: flex-end;
+   
 }
 
-.NavBar .NavBar_rightSide button{
-    height: 32px;
-    width: 70px;
+.NavBar .NavBar_rightSide button{ 
     font-size: 16px;
+    padding: 7px;
+    margin-left: 1px;
 }
 
 .NavBar .NavBar_leftSide button{
@@ -102,4 +106,14 @@ button:hover{
         margin: 10px;
         font-size: 25px;
      }
+}
+
+.NavBar_Home{
+    box-shadow:  0px 0px 1px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+}
+
+.NavBar_Create{
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+    padding: 5px;
 }

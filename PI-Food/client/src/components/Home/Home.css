@@ -1,11 +1,10 @@
 .Home {
-    /* para centrar */
-    display: flex; 
+    display: flex;  
     flex-direction: column;
     justify-content: center; 
     align-content: center; 
     align-items: center; 
-    flex-wrap: wrap;    
+    flex-wrap: wrap;     
 }
 
 .RecipesHome{
@@ -22,8 +21,4 @@
     flex-wrap: wrap;   
 }
 
-.Home_filterComponent{
-   margin-top: 2rem;
-   display: flex;
-}
 

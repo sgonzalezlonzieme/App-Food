@@ -47,12 +47,9 @@ export function Home(){
   }
  
 
-   return ( 
+   return ( <div>
+       <FilterComponent />
        <div className="Home">
-              <div className="Home_filterComponent">
-                 <FilterComponent />
-              </div>
-
               <div className="RecipesHome">
                    {
                        currentPosts.map(rec => (
@@ -64,6 +61,7 @@ export function Home(){
                        ))}     
               </div>
            <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
+       </div>
        </div>
    )
 }

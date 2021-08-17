@@ -20,12 +20,15 @@
     width: 323px;
     height: 400px;
     text-align: center;
-    background-color: rgb(216, 80, 1);
+    background-color: rgb(233, 88, 4);
     border-radius: 3px;
     margin: 43px;    
     border: 1.6px solid rgb(231, 143, 61);
-    box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.4);
+    box-shadow: 6px 6px 6px 7px rgba(0, 0, 0, 0.3);
     text-decoration: none;
+    transform: scale(1.05);
+    transition: transform .3s ease-in-out;
+    
 }
 
 
@@ -37,11 +40,12 @@
     justify-content: space-evenly;
     -webkit-align-items: flex-end;
     align-items: flex-end;
-    font-size: 25px;
+    font-size: 15px;
     font-family: 'Poppins', sans-serif;
     font-weight: normal;
     height: 2.5rem;
-    padding-top: 1.2rem;
+    padding-top: 0.6rem;
+    text-overflow: ellipsis;
 
 }
 
@@ -59,7 +63,7 @@
     -webkit-justify-content: space-evenly;
     -webkit-align-items: center;
     -webkit-flex-wrap: wrap;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .RecipesCards_CardsImage{

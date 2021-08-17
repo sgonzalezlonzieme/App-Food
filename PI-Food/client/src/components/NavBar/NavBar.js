@@ -32,8 +32,8 @@ export function NavBar(){
         <div className='NavBar'>
             <div className="NavBar_leftSide">
               <div className="NavBar_links" id={showLinks ? "hidden" : ""}>
-               <Link to='/home' onClick={() => dispatch(getRecipes())}>Home</Link>
-               <Link to='/recipe/create'>Create recipe</Link>
+               <Link className="NavBar_Home" to='/home' onClick={() => dispatch(getRecipes())}>Home</Link>
+               <Link className="NavBar_Create" to='/recipe/create'>Create recipe</Link>
               </div>
               <button onClick={() => setShowLinks(!showLinks)}><FontAwesomeIcon icon={faBookOpen}/></button>
             </div>

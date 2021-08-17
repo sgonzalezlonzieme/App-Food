@@ -1,13 +1,18 @@
 .Filter_FilterContainer{
-  /* display: flex; */
+  display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  border: 5px solid rgb(182, 16, 16);
-  
+  margin-top: 20px;
 }
 
-.Filter_FilterContainer select{
-   margin: 40rem;
+.Filter_select select{
+   background-color: rgb(107, 5, 5);
+   color: rgb(214, 216, 245);
+   font-size: 15px;
+   margin-left: 20px;
+   box-shadow: 5px 5px 40px rgb(245, 243, 243);
+   border-radius: 5px;
+   padding: 11px;
+   opacity: 1s;
 }
-
