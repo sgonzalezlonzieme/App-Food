@@ -14,12 +14,9 @@ export function LandingPage(){
 
 
     return (
-        
         <div className='Background'>
         <div className="LandingTitle">Welcome to Your Recipe World</div>
         <Link to='/Home'><button className="ButtonIn">Home</button></Link>
-            {/* <Link to='/Home'><button className="ButtonIn">Home</button></Link> */}
         </div>
-      
     )
 }

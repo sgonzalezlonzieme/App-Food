@@ -1,149 +1,105 @@
 .NavBar{
-    box-shadow: 0 0 20px rgb(247, 236, 236);
-    height: 70px;
+    background-color: rgb(129, 5, 5);
     width: 100%;
-    display: inline-block;
-    -webkit-align-items: center;
+    height: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+}
+
+.NavBar .leftSide{
+    flex: 50%;
+    color: rgb(4, 41, 97);
+    display: flex;
+    justify-content: left;
     align-items: center;
-    /* position: fixed; */
-    justify-content: space-between;
-    padding: 0px;
-    box-sizing: border-box;
-    background-image: url(../../img/Fondo\ Nav\ 2.jpg);
 }
 
-.SubmitType{
- 
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    /* position: fixed; */
-    position: -webkit-sticky;
-    left:10px;
-    top:40px;
-    border-radius: 3px;
-    box-shadow: 0 0px 2px rgb(231, 225, 225);
-    cursor: pointer;
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 15px;
-    text-align: center;
-
-
+.NavBar .leftSide .links{
+   max-height: 80px;
 }
 
-.HomeButton{
-    background-color: #202220; /* Green */
-    border-radius: 2px;
-    color: white;
-    padding: 0;
-    display: inline-block;
-    font-size: 16px;
-    position: relative;
-    left: 40px;
-    top: 10px;
-    width: 10px;
-}
+.NavBar .leftSide .links a{
+     text-decoration: none;
+     color: rgb(125, 118, 150);
+     font-size: 25px;
+     margin-left: 15px;
+ }
 
-.HomeButton:hover{
-    border-radius: 5px;
-    background-position: right center; 
-    color: rgb(255, 161, 38);
-    text-decoration: none;
-    opacity: 1s;
-    box-shadow: 0 0 2px rgb(255, 161, 38);
-}
 
-.SearchButton{
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    /* position: fixed; */
-    position: absolute;
-    left:587px;
-    top:10px;
-    border-radius: 3px;
-    box-shadow: 0 0px 2px rgb(231, 225, 225);
-    cursor: pointer;
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 15px;
-    text-align: center;
-}
 
-.SearchButton:hover{
-    border-radius: 5px;
-    background-position: right center; 
-    color: rgb(255, 161, 38);
-    text-decoration: none;
-    box-shadow: 1 0 2.5px rgb(255, 38, 38);
-    background-color: 0 0 40px rgb(122, 96, 39);
-    opacity: 1.1s;
-    box-shadow: 0 0 7px rgb(255, 161, 38);
-}
-
-.CreateButton{
-    display: inline-block;
-    justify-content: center;
-    /* position: fixed; */
-    position: absolute;
-    right: 40px;
-    top:30px;
-    border-radius: 3px;
-    box-shadow: 0 0px 10px rgb(231, 225, 225);
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 30px;
-    opacity: 1.1s;
-    
-}
-
-.CreateButton:hover{
-    border-radius: 5px;
-    background-position: right center; 
-    color: rgb(255, 161, 38);
-    text-decoration: none;
-    box-shadow: 1 0 2.5px rgb(255, 38, 38);
-    background-color: 0 0 40px rgb(122, 96, 39);
-    opacity: 1s;
-   
-    box-shadow: 0 0 7px rgb(255, 161, 38);
-}
-
-.ButtonIn {
-    background-color: #1d1513;
-    border: none;
-    border-radius: 5px;
-    padding: 16px 32px;
-    text-align: center;
-    margin: 4px 2px;
-    transition: 0.4s;
-    color: rgb(228, 78, 33);
-    opacity: 0.8;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 5s;
-    font-size: 25px;
-    margin: 10px;
-    padding: 10px 20px;
-    text-align: center;
-    background-size: 250% auto;
-    box-shadow: 0 0 2px rgb(224, 146, 20);
+.NavBar .rightSide{
+    flex: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: fixed;
-    right: 588px;
-    bottom: 320px;
-    width: 200px;
+    justify-content: flex-end;
+    padding-right: 25px;
 }
 
-.ButtonIn:hover{
-    border-radius: 5px;
-    background-position: right center; 
-    color: rgb(255, 161, 38);
-    text-decoration: none;
-    box-shadow: 1 0 2.5px rgb(255, 38, 38);
-    background-color: 0 0 40px rgb(122, 96, 39);
-    opacity: 1s;
-    box-shadow: 0 0 7px rgb(255, 161, 38);
-    
+.NavBar .rightSide input{
+    width: 220px;
+    height: 30px;
+    border: none; 
+    border-radius: 4px;
+    font-size: 20px;
+    padding-left: 15px;
+    color: black;
+}
+
+.NavBar .rightSide button{
+    height: 32px;
+    width: 70px;
+    font-size: 16px;
+}
+
+.NavBar .leftSide button{
+    display: none;
+    margin-left: 20px;
+ }
+
+ 
+.NavBar .leftSide #hidden{
+    display: flex;
+ }
+
+button:hover{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 880px){
+
+  .NavBar .leftSide .links a{
+    font-size: 20px;
+}
+
+}
+
+@media only screen and (max-width: 750px){
+    .NavBar .leftSide .links a{
+      font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 650px){
+    .NavBar .leftSide button{
+        display: flex;
+     }
+     .NavBar .leftSide .links{
+        display: none;
+    }
+    .NavBar .leftSide #hidden{
+        position: absolute;
+        left: 0px;
+        top: 80px;
+        height: 105px;
+        max-height: 180px;
+        width: 100%;
+        background-color: rgb(129, 5, 5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+     }
+     .NavBar .leftSide #hidden a{
+        margin: 10px;
+        font-size: 25px;
+     }
 }
