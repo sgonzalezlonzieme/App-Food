@@ -51,30 +51,31 @@ export function CreateRecipe(){
     <div className="Create_createContainer">
         <form onSubmit={(event) => handleSubmit(event)}>
             <div className="Create_Form">
-               <label>Title </label>
-               <input type="text" name="title" value={recipeInfo.title} onChange={HandleChange} required/>
+               <label>Title : </label>
+               <input placeholder="insert title..." type="text" name="title" value={recipeInfo.title} onChange={HandleChange} required/>
             </div>
             <div className="Create_Form">
-               <label>Summary </label> 
-               <textarea type="text" name="summary" value={recipeInfo.summary} onChange={HandleChange} required/>
+               <label>Summary : </label> 
+               <textarea placeholder="insert description..." type="text" name="summary" value={recipeInfo.summary} onChange={HandleChange} required/>
             </div>
             <div className="Create_Form">
-               <label>Score </label> 
-               <input type="number" min="0" max="100" name="spoonacularScore" value={recipeInfo.spoonacularScore} onChange={HandleChange} required/>
+               <label>Score : </label> 
+               <input placeholder="points..." type="number" min="0" max="100" name="spoonacularScore" value={recipeInfo.spoonacularScore} onChange={HandleChange} required/>
             </div>
             <div className="Create_Form">
-               <label>Healthscore </label> 
-               <input type="number" min="0" max="100" name="healthScore" value={recipeInfo.healthScore} onChange={HandleChange} required/>
+               <label>Healthscore : </label> 
+               <input placeholder="points..." type="number" min="0" max="100" name="healthScore" value={recipeInfo.healthScore} onChange={HandleChange} required/>
             </div>
             <div className="Create_Form">
-               <label>Instructions </label> 
-               <textarea type="text" name="analyzedInstructions" value={recipeInfo.analyzedInstructions} onChange={HandleChange} required/>
+               <label>Instructions : </label> 
+               <textarea placeholder="step by step..." type="text" name="analyzedInstructions" value={recipeInfo.analyzedInstructions} onChange={HandleChange} required/>
             </div>
             <div className="Create_Form">
-               <label>Image </label> 
-               <input type="text" name="image" value={recipeInfo.image} onChange={HandleChange} required/>
+               <label>Image : </label> 
+               <input placeholder="url..." type="text" name="image" value={recipeInfo.image} onChange={HandleChange} required/>
             </div>
             <div className="Create_Form">
+            <label>Diets : </label> 
             <select name="diets" onChange={HandleDiets} multiple="multiple" required>
                 {dietsMap.map(r => {
                  return <option value={r.id}>{r.name}</option>
