@@ -18,7 +18,7 @@ router.get('/', async (req, res, next) => {
        
         let recipesAll = recipes.data.results
         
-                let recipesAll1 = recipesAll.map(p => {return {  
+                let recipesApi = recipesAll.map(p => {return {  
                     title: p.title,
                     image: p.image,
                     diets: p.diets,
@@ -29,8 +29,6 @@ router.get('/', async (req, res, next) => {
 
         const database = await Recipe.findAll({include: Diet})
 
-        //let result3 = recipesAll.concat(database)
-
         let databaseResult = database.map(p => {return {  
             title: p.title,
             image: p.image,
@@ -39,7 +37,7 @@ router.get('/', async (req, res, next) => {
             spoonacularScore: p.spoonacularScore,
         }})
          
-        let render = recipesAll1.concat(databaseResult)
+        let render = recipesApi.concat(databaseResult)
      
         return res.send(render)
     } 
@@ -57,10 +55,10 @@ router.get('/', async (req, res, next) => {
 
         let recipesAll = recipes.data.results
                                                 //Para evitar el sensite case
-        let result2 = recipesAll.filter(obj => {return obj.title.toLowerCase().includes(name.toLowerCase())})
+        let resultApi = recipesAll.filter(obj => {return obj.title.toLowerCase().includes(name.toLowerCase())})
 
       
-        let mapResultApi = result2.map(p => {return {
+        let mapResultApi = resultApi.map(p => {return {
             title: p.title,
             image: p.image,
             diets: p.diets,
@@ -127,8 +125,7 @@ router.get('/', async (req, res, next) => {
             let {image, title,
                 dishTypes, diets, summary, spoonacularScore, healthScore, analyzedInstructions, id} = recipesAll
                 
-            let analyzedResult1 = analyzedInstructions[0]?.steps.map(p => p.step)
-        
+            let analyzedResult = analyzedInstructions[0]?.steps.map(p => p.step)
             
             let obj = {
                 id: id,
@@ -139,7 +136,7 @@ router.get('/', async (req, res, next) => {
                 summary: summary,
                 spoonacularScore: spoonacularScore,
                 healthScore: healthScore,
-                analyzedInstructions: analyzedResult1,
+                analyzedInstructions: analyzedResult,
         }
            return res.json(obj)
 
