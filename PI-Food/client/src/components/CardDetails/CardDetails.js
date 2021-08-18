@@ -4,8 +4,7 @@ export default function CardDetails(props){
         
  return   (
              <div className='Details_cardDivDetails'>
-              <label><strong>Title</strong></label>
-              <div className='Details_TotalDetails' >{props.title}</div>
+              <div className='Details_TotalDetails' ><h2>{props.title}</h2></div>
               <label><strong>Diets</strong></label>
               <div className='Details_TotalDetails' >{props.diets?.join(', ')}</div>
               <div className='Details_TotalDetails'><img src={props.image} alt={props.title}/></div>

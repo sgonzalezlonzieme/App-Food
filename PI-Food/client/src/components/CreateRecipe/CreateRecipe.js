@@ -60,11 +60,11 @@ export function CreateRecipe(){
             </div>
             <div className="Create_Form">
                <label>Score : </label> 
-               <input placeholder="points..." type="number" min="0" max="100" name="spoonacularScore" value={recipeInfo.spoonacularScore} onChange={HandleChange} required/>
+               <input placeholder="0-100" type="number" min="0" max="100" name="spoonacularScore" value={recipeInfo.spoonacularScore} onChange={HandleChange} required/>
             </div>
             <div className="Create_Form">
                <label>Healthscore : </label> 
-               <input placeholder="points..." type="number" min="0" max="100" name="healthScore" value={recipeInfo.healthScore} onChange={HandleChange} required/>
+               <input placeholder="0-100" type="number" min="0" max="100" name="healthScore" value={recipeInfo.healthScore} onChange={HandleChange} required/>
             </div>
             <div className="Create_Form">
                <label>Instructions : </label> 

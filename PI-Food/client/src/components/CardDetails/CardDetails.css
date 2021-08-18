@@ -26,3 +26,8 @@
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
 }
+
+.Details_TotalDetails img{
+  border-radius: 8px;
+  margin-top: 8px;
+}

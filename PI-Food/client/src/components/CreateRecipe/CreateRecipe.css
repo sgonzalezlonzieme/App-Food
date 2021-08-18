@@ -38,7 +38,7 @@
     height: 120px;
     background-color: rgb(155, 18, 18);
     color: white;
-    border: black;
+    border: 1px solid rgb(92, 1, 1);
 }
 
 .Create_Form input{
@@ -46,15 +46,14 @@
     color: white;
     background-color: rgb(155, 18, 18);
     box-shadow: 5px white;
-    border: black;
+    border: 1px solid rgb(92, 1, 1);
 }
 
 .Create_Form select{
     resize: none;
     color: white;
     background-color: rgb(155, 18, 18);
-    border: black;
-   
+    border: 1px solid rgb(92, 1, 1);
 }
 
 .Create_Form label{
