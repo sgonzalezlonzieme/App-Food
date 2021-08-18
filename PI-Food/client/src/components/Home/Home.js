@@ -33,6 +33,7 @@ export function Home(){
     }else{
       setPosts(recipesFilter)
     } 
+    setCurrentPage(1)
   }, [recipes, recipesFilter, filterBy, orderBy])
 
   // useEffect(() => {

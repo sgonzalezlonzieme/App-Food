@@ -30,7 +30,6 @@ router.get('/', async (req, res, next) => {
        const bulk = await Diet.bulkCreate(arreglo2)
        let names = bulk.map(p => {return {name: p.name, id: p.id}})
        res.json(names);
-       //adentro de recipesArray están todas las dietas menos vegetarian
      }else{    
        let names = allDiets.map(p => {return {name: p.name, id: p.id}})
        res.json(names);  

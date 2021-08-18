@@ -12,6 +12,7 @@
     text-decoration: none;
     padding: 30px;
     font-family: 'Poppins', sans-serif;
+    color: white;
  }
 
 .Details_cardDivDetails label{
@@ -24,6 +25,8 @@
   margin-bottom: 5px;
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
+  color:white;
+  
 }
 
 .Details_TotalDetails img{

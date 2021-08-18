@@ -72,7 +72,7 @@ export function CreateRecipe(){
             </div>
             <div className="Create_Form">
                <label>Image : </label> 
-               <input placeholder="url..." type="text" name="image" value={recipeInfo.image} onChange={HandleChange} required/>
+               <input placeholder="url..." type="url" name="image" value={recipeInfo.image} onChange={HandleChange} required/>
             </div>
             <div className="Create_Form">
             <label>Diets : </label> 

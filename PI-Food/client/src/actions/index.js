@@ -51,22 +51,20 @@ export const getRecipes = () => {
       }
 }
 
-export const OrderType = (data) => {
-  return (dispatch) => {
-    console.log(data)
-    return dispatch({ type: ORDER_TYPE, payload: data});
-
-    }  
-}
-
 export const OrderDiet = (data) => {
   return (dispatch) => {
     console.log(data)
     return dispatch({ type: "FILTER_DIETS", payload: data});
-
     }  
 }
    
-   
+export const OrderType = (data) => {
+  return (dispatch) => {
+    console.log(data)
+    return dispatch({ type: ORDER_TYPE, payload: data});
+    }  
+}
+
+
   
 
